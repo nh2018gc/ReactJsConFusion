@@ -11,7 +11,8 @@ tasks:
   # must cd into json-server directory!
   # and must wait above install json-server done
   - name: json server as BE 
-    command: gp sync-await installDone && cd json-server && json-server --watch -p 3001 db.json
+    init: gp sync-await installDone
+    command: cd json-server && json-server --watch -p 3001 db.json
     openMode: split-right
 ports:
   - port: 3000
