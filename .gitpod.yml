@@ -1,7 +1,7 @@
 tasks:
   - name: dev server part
-    init: npm install -g json-server && npm install
-    command: yarn run start && gp sync-done installDone
+    init: npm install -g json-server && npm install && gp sync-done installDone
+    command: yarn run start 
   # must cd into json-server directory!
   # and must wait above install json-server done
   - name: json server as BE 
