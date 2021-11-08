@@ -1,7 +1,13 @@
 tasks:
+  - name: reminder - MUST use `gitpod-local-companion-darwin --mock-keyring=true`
+    command: |
+      echo '🚨 reminder - MUST use `gitpod-local-companion-darwin --mock-keyring=true`'
+      echo '🚨 reminder - MUST use `gitpod-local-companion-darwin --mock-keyring=true`'
+      echo '🚨 reminder - MUST use `gitpod-local-companion-darwin --mock-keyring=true`'
   - name: dev server part
     init: npm install -g json-server && npm install && gp sync-done installDone
     command: yarn run start 
+    openMode: split-right
   # must cd into json-server directory!
   # and must wait above install json-server done
   - name: json server as BE 
