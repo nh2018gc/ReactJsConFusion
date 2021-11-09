@@ -5,14 +5,13 @@ tasks:
       echo '🚨 reminder - MUST use `gitpod-local-companion-darwin --mock-keyring=true`'
       echo '🚨 reminder - MUST use `gitpod-local-companion-darwin --mock-keyring=true`'
   - name: dev server part
-    init: npm install -g json-server && npm install && gp sync-done installDone
-    command: yarn run start 
+    init: npm install
+    command: npm start 
     openMode: split-right
   # must cd into json-server directory!
   # and must wait above install json-server done
-  - name: json server as BE 
-    init: gp sync-await installDone
-    command: cd json-server && json-server --watch -p 3001 db.json
+  - name: json server, directly with npx although no pre-download but it is okay
+    command: cd json-server && npx -y json-server --watch -p 3001 db.json
     openMode: split-right
 ports:
   - port: 3000
